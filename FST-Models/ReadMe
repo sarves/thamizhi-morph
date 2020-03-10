@@ -15,3 +15,5 @@
   you need to use this after checking a word with all other verbal models listed above.
 
 ##FST Models for nouns:
+  -nouns.fst: the model for noun morphological analyser
+  -noun-guesser.fst: a guesser for noun morphology

@@ -1,11 +1,11 @@
 ## Noun lexicons
   > this has words that are obtained from various sources in the web, including the following sources:
   
-    - https://github.com/Ezhil-Language-Foundation/open-tamil
-    - http://www.au-kbc.org/nlp/corpusrelease.html from which we extracted only nouns. 
+- https://github.com/Ezhil-Language-Foundation/open-tamil
+- http://www.au-kbc.org/nlp/corpusrelease.html from which we extracted only nouns. 
       However, this list is not clean/words may not be in their root form 
       as several categories of words here are marked as nouns. 
-    - Tamil wikitionary
+- Tamil wikitionary
     
 ### Noun word counts:
         71 Nouns-animals

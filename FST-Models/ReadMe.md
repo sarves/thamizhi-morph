@@ -1,10 +1,10 @@
 ##FST Models for Verbs:
-  -verbs-c3.fst: model for class 3
-  -verbs-c4.fst: model for class 4
-  -verbs-c62.fst: model for class 62
-  -verbs-c11.fst: model for class 11
-  -verbs-c12.fst: model for class 12
-  -verb-rest.fst: model for the rest of the classes
+-verbs-c3.fst: model for class 3
+-verbs-c4.fst: model for class 4
+-verbs-c62.fst: model for class 62
+-verbs-c11.fst: model for class 11
+-verbs-c12.fst: model for class 12
+-verb-rest.fst: model for the rest of the classes
   
   >Note: Because of the orgthographical rule conflect among some of these classes, 
   we had to make them are separate classes. However, 

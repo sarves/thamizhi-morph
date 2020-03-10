@@ -1,0 +1,1 @@
+> This has the Unique word list of different grammatical categories extracted from a public corpus avaiable here:http://www.au-kbc.org/nlp/corpusrelease.html. The text in this corpus is extracted from a Tamil historical (1000 years old history) novel.

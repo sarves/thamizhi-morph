@@ -1,7 +1,7 @@
-##FST Models for Verbs:
+## FST Models for Verbs:
 
--verbs-c3.fst: model for class 3
--verbs-c4.fst: model for class 4
+- erbs-c3.fst: model for class 3
+- verbs-c4.fst: model for class 4
 -verbs-c62.fst: model for class 62
 -verbs-c11.fst: model for class 11
 -verbs-c12.fst: model for class 12

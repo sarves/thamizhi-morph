@@ -12,8 +12,8 @@
   from the computational point of view, this is not a problem. 
   You need to just iterate through these these models.
   
-- verb-guesses.fst: model for morphological guesser, 
-  you need to use this after checking a word with all other verbal models listed above.
+- verb-guesses.fst: model for morphological guesser 
+  > Note: You need to use this after checking a word with all other verbal models listed above.
 
 ## FST Models for nouns:
   - nouns.fst: the model for noun morphological analyser

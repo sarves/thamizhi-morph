@@ -1,0 +1,35 @@
+### Tamil.foma ###
+read lexc ThamizhiVerbs-C3.lexc
+define Lexicon;
+
+define VM [ா | ி | ீ | ு | ூ | ெ |ே | ொ |ோ |ை];
+define CON [க | ச | ட | த | ப | ற | ய | ர | ள | வ | ழ | ல | ங | ஞ | ண | ந | ம | ன ];
+
+######### Rewrite rules
+define C3R1 {ல்} -> 0 || _ "^" [{ன்}];
+##This is an issue, முயலாத / வெல்லாத  - how to handle this?
+define C3R2 {ல்} -> {ல்ல} || .#. CON VM _ "^" [{அ}|{ா}];
+define C3R22 {ல்} -> {ல}  || _ "^" [{ு}|{அ}];
+define C3R3 {ல்} -> {ல}  || _ "^" [{ா}];
+# To Cleanup: remove morpheme boundaries
+define Cleanup1 "அ" -> 0 || "^" _;
+define Cleanup2 "^" -> 0;
+define C3R4 {ல்த} -> {ன்ற};
+define C3R5 {ல்து} -> {ன்று};
+define C3R5 {விவ} -> {விப்ப};
+define C3R5 {விவ} -> {விப்ப};
+
+define ClassThreeGrammar 	Lexicon           	.o.
+	  	C3R1		.o.
+	  	C3R2		.o.
+	  	C3R22		.o.
+	  	C3R3		.o.
+		Cleanup1		.o.
+		Cleanup2		.o.
+	  	C3R4		.o.
+	  	C3R5;
+
+regex ClassThreeGrammar;
+
+
+

@@ -1,0 +1,37 @@
+### Tamil.foma ###
+
+read lexc ThamizhiVerbs-C4.lexc
+define Lexicon;
+
+######### Rewrite rules
+
+define C4R1 {ை} -> {ைய} || _ "^" [{ும்}|{அ}|{ா}];
+define C4R2  {்} -> 0  || _ "^" [{ும்}|{ா}];
+define C4R3 {ி} -> {ிய} || _ "^" [{ும்}|{ா}];
+define C4R4 {ு} -> {ுக்க} || _ "^" [{ும்}|{அ}];
+define C4R5 {ழ்} -> {ழ}  || _ "^" [{அ}];
+define C4R6 {ி} -> {ிக்க}  || _ "^" [{அ}];
+define C4R7 {ர்} -> {ர்க்க} || _ "^" [{அ}];
+define C4R8 [{தீ}] -> {தீய} || _ "^" [{அ}|{ா}];
+define C4R9 [{ஈ}] -> {ஈய} || _ "^" [{அ}];
+
+
+# To Cleanup: remove morpheme boundaries
+define Cleanup1 "அ" -> 0 || "^" _;
+define Cleanup2 "^" -> 0;
+
+define ClassFourGrammar 	Lexicon	.o.
+		C4R1	.o.
+		C4R2	.o.
+		C4R3	.o.
+		C4R4	.o.
+		C4R5	.o.
+		C4R6	.o.
+		C4R7	.o.
+		C4R8	.o.
+		C4R9	.o.
+		Cleanup1		.o.
+		Cleanup2;
+
+regex ClassFourGrammar;
+

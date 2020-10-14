@@ -1,0 +1,38 @@
+### Tamil.foma ###
+
+read lexc ThamizhiVerbs-C12.lexc
+define Lexicon;
+
+######### Rewrite rules
+
+define C12Rule1 {ய} -> {யக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule2 {ண} -> {ணக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule3 {ள} -> {ளக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule4 {ல} -> {வக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule5 {ற} -> {றக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule6 {ழ} -> {ழக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+
+define C12Rule7 {ட} -> {டக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule8 {ு} -> {ுக்க}  || _ "^" [{ும்}| {ா} | {ி}| {அ}];
+define C12Rule8 {ு} -> {க்க}  || _ "^" [{க} | {அ}];
+
+
+# To Cleanup: remove morpheme boundaries
+define Cleanup1 "அ" -> 0 || "^" _;
+define Cleanup "^" -> 0;
+
+
+define ClassTwelveGrammar 	Lexicon           	.o.
+			C12Rule1           	.o.
+			C12Rule2           	.o.
+			C12Rule3           	.o.
+			C12Rule4           	.o.
+			C12Rule5           	.o.
+			C12Rule6           	.o.
+			C12Rule7           	.o.
+			C12Rule8           	.o.
+			Cleanup1		.o.
+			Cleanup;
+
+regex ClassTwelveGrammar;
+

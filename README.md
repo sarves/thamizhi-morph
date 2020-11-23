@@ -84,7 +84,7 @@ If you want to do the morphological parsing along with the POS tagger, you can u
 ### Challenges and future work
 
 Tamil is morphologically rich, and has evolved over several thousand years. This makes the task a challenging in terms of coverage and understanding. Further, even with a POS tagger which captures the context, disambiguation was not possible, and there are syntactical clues are required at sometimes. As an analyser, this tool provide all the analyses when it cannot be disambiguated. 
-We are in the process of develop a neural based morphological analyser based on the data we generated from ThamizhiMorph. Further, we are also exploring ways in which we can do more disambiguation, may be using syntactical clues if we can get them. 
+We are in the process of developing a neural based morphological analyser based on the data we generated from ThamizhiMorph. Further, we are also exploring ways in which we can do more disambiguation, may be using syntactical clues if we can get them. 
 
 ### Cite please
 

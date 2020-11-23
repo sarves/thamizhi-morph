@@ -4,17 +4,17 @@ Note, I am revamping the site, therefore, there may be outages time to time. Ple
 
 
 ThamizhiMorph is an open source Tamil morphological analyser cum generator, which handles primarily the inflectional morphology of Tamil verbs, nouns, and other types. This has been developed using a Finite-State Transducer (fomafst.github.io). 
-A neural based tokeniser, and POS tagger have also been integrated to this tool so that given text can be analysed contectually to provide morphological analyses.
+A neural based tokeniser, and POS tagger have also been integrated to this tool so that given text can be analysed contextually to provide morphological analyses.
 
 Nominal and verbal paradigms are used to implement this analyser cum generator. 
 
 ### Noun morphology
 
-A lexicon of 80K nouns have been compiled from various sources, including books and the Internet. Out nominal pradigm has in total of 38 classes for nouns, 16 for regular nouns and rest are for pronouns that are irrular in Tamil.
+A lexicon of 80K nouns have been compiled from various sources, including books and the Internet. Out nominal paradigm has in total of 38 classes for nouns, 16 for regular nouns and rest are for pronouns that are irregular in Tamil.
 
 In morphological analysis we have handled 220 conjugations, including the conjugations of post-positional particles, for each noun class.
 
-In addition we have also implemented a python script to classify nouns according to our paradigm. This script can befound here: https://github.com/sarves/Tamil-Noun-Classifier
+In addition we have also implemented a python script to classify nouns according to our paradigm. This script can be found here: https://github.com/sarves/Tamil-Noun-Classifier
 
 ### Verb morphology
 
@@ -22,13 +22,13 @@ We used a paradigm of 18 classes to handle verbal morphology, which is derived f
 
 We have handled 140 conjugational forms for each verbs. In addition to simple verbal roots, we have also included complex verbal roots which are formed by noun-verb and verb-verb formation.
 
-In order to implement this in foma, we also have come up with a meta-morph rules (Meta-Morphological rules) to write inflections. Meta-morph is a markup language using which the inflectional morphology of morphologically regular languages can be captured. However, this needs bit more generalisations to capture other languages; this is on our future work. This is captured in the following paper:
+In order to implement this in foma, we also have come up with a meta-morph rules (Meta-Morphological rules) to write inflections. Meta-morph is a markup language using which the inflectional morphology of morphologically regular languages can be captured. However, this needs bit more generalizations to capture other languages; this is on our future work. This is captured in the following paper:
 
 Sarveswaran, K., Dias, G. and Butt, M., 2019. Using Meta-Morph Rules to develop Morphological Analysers: A case study concerning Tamil. In Proceedings of the 14th International Conference on Finite-State Methods and Natural Language Processing (pp. 76-86).
 
 ### Morphology of other particles
 
-We have also handled adjectives, adverbs and other paricles. Conjuctions, intensifier, post-positional forms, numbers, complumentisers etc are included in a class called particles. Lexicons for these types were collection from the web, primarily.
+We have also handled adjectives, adverbs and other particles. Conjunctions, intensifier, post-positional forms, numbers, complimentisers etc are included in a class called particles. Lexicons for these types were collection from the web, primarily.
 
 ### Generations of words
 
@@ -39,7 +39,7 @@ Using ThamizhiMorph, surface forms or actucal words can be generated. This list 
 - Open source, and available under Apache-2 licence
 - Has good coverage or words, and more words can be added eality to the analyser
 - Analyser is developed as a finate-state model, which is very efficient, and can be integrated to any other tools easily or can be accessed through any other programming languages
-- The only analyser which handles sandhi in its anlyses, sandhi gives important clues for morphological/syntactical processes
+- The only analyser which handles Sandhi in its anlyses, Sandhi gives important clues for morphological/syntactical processes
 - ThamizhiMorph is a transducer, there generations can also be done. 
 
 ### ThamizhiMorph - what are given
@@ -56,17 +56,22 @@ There are two ways in which we can use ThamizhiMorph:
 - Web portal: http://nlp-tools.uom.lk/thamizhi-morph/
 Using this portal, given text cn be analysed word by word, without considering any contextual information. Currently, there are no POS integrated to the version avilable here.
 
-- Terminal version / standalone version: This is a python version of the tagger, available for the download in this repo. This is a python programme which integrates a tokeniser, ThamizhiPOSt (a POS tagger) and ThamizhiMorph. This analyse the data given in a text file called sentences.txt in the given folder, and provide two documents. One of which consists the contextual analyses by considering POS tagger informtion and morphological information. The other file captures the analyses where POS and ThamizhiMorph deviate. Since POS tagger is also does not have the 100% accuracy, we did not through anything data analysed by ThamizhiMorph. You can read more about the ThamizhiPOSt here: XXXXXXXX
-
+- Terminal version / standalone version: This is a python version of the tagger, available for the download in this repo. This is a python program which integrates a tokeniser, ThamizhiPOSt (a POS tagger) to ThamizhiMorph. This analyse the data given in a text file called sentences.txt in the given folder, and provide two documents. One of them consists the contextual analyses by considering POS tagger informtion and morphological information. The other file captures the analyses where POS and ThamizhiMorph deviate. Since POS tagger is also does not have the 100% accuracy, we could not completely relay on it and ignore what is provided by ThamizhiMorph. You can read more about the ThamizhiPOSt here: https://github.com/sarves/thamizhi-pos
 
 ### How to set ThamizhiMorph up
 
-You can use the website version without needing of any special requirements. All the data to this tool has to be fed in Unicode format. The other version 
+You can use the website version without needing of any special requirements. All the data to this tool has to be fed in Unicode format. 
+
+In order to run the terminal version you need to install the following tools as the pre-requisite:
+-foma - https://fomafst.github.io/
+-stanza - https://stanfordnlp.github.io/stanza/
+
+Thereafter, use the python script to do the contextual morphological tagging. Make sure you keep the POS model, Tokenizer model (these two models you can get it from https://github.com/sarves/thamizhi-pos) and Facebook's fastext model under a directory called models, and all the fsts files from https://github.com/sarves/thamizhi-morph/tree/master/FST-Models in a folder called fsts. Further, you also need to ensure that all the FST models have executable permission. Anyway the python script is self explonary. Feel free to reach out me if you have any issues.
 
 ### Challenges and future work
 
-Tamil is morphologically rich, and has evolved over several thousand years. This makes the task a challeging in terms of coverage and understanding. Further, even with a POS tagger which captures the context, disambiguation was not possible, and there are syntactical clues are required at sometimes. As an analyser, this tool provide all the analyses when it cannot be disambigurated. 
-We are in the process of develop a neural based morphological analyser based on the data we generated from ThamizhiMorph. Further, we are also exploring ways in which we can do more disambiguations, may be using syncatical clues if we can get them. 
+Tamil is morphologically rich, and has evolved over several thousand years. This makes the task a challenging in terms of coverage and understanding. Further, even with a POS tagger which captures the context, disambiguation was not possible, and there are syntactical clues are required at sometimes. As an analyser, this tool provide all the analyses when it cannot be disambiguated. 
+We are in the process of develop a neural based morphological analyser based on the data we generated from ThamizhiMorph. Further, we are also exploring ways in which we can do more disambiguation, may be using syntactical clues if we can get them. 
 
 ### Cite please
 
@@ -74,6 +79,16 @@ We are in the process of develop a neural based morphological analyser based on 
 - Sarveswaran, K., Dias, G. and Butt, M.: “Using Meta-Morph Rules to develop Morphological Analysers: A case study concerning Tamil”, 14th International Conference on Finite-State Methods and Natural Language Processing,Dresden, Germany, September 23–25, 2019.
 - Sarveswaran, K., Dias, G. and Butt, M.: “ThamizhiFST: A Morphological Analyser and Generator for Tamil Verbs,” 3rd International Conference on Information Technology Research (ICITR), pp. 1-6, Moratuwa, Sri Lanka, 2018.
 
-### Acknowledgement
+### Acknowledgment
 
 This research was supported by the Accelerating Higher Education Expansion and Development (AHEAD) Operation of the Ministry of Higher Education, Sri Lanka funded by the World Bank, and also supported by the DAAD (German Academic Exchange Office)
+
+
+### Developer / point of contact
+
+K. Sarveswaran, 
+Department of Computer Science and Engineering |
+National Languages Processing Centre,
+University of Moratuwa.
+iamsarves@gmail.com
+sarvesk@uom.lk

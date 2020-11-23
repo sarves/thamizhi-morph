@@ -56,7 +56,7 @@ There are two ways in which we can use ThamizhiMorph:
 - Web portal: http://nlp-tools.uom.lk/thamizhi-morph/
 Using this portal, given text cn be analysed word by word, without considering any contextual information. Currently, there are no POS integrated to the version avilable here.
 
-- Terminal version / standalone version: This is a python version of the tagger, available for the download in this repo here: thamizhi-morph-parse-2.py. This is a python program which integrates a tokeniser, ThamizhiPOSt (a POS tagger) to ThamizhiMorph. This analyse the data given in a text file called sentences.txt in the given folder, and provide two documents. One of them consists the contextual analyses by considering POS tagger informtion and morphological information. The other file captures the analyses where POS and ThamizhiMorph deviate. Since POS tagger is also does not have the 100% accuracy, we could not completely relay on it and ignore what is provided by ThamizhiMorph. You can read more about the ThamizhiPOSt here: https://github.com/sarves/thamizhi-pos
+- Terminal version / standalone version: This is a python version of the tagger, available for the download in this repo here: *thamizhi-morph-parse-2.py*. This is a python program which integrates a tokeniser, ThamizhiPOSt (a POS tagger) to ThamizhiMorph. This analyse the data given in a text file called sentences.txt in the given folder, and provide two documents. One of them consists the contextual analyses by considering POS tagger informtion and morphological information. The other file captures the analyses where POS and ThamizhiMorph deviate. Since POS tagger is also does not have the 100% accuracy, we could not completely relay on it and ignore what is provided by ThamizhiMorph. You can read more about the ThamizhiPOSt here: https://github.com/sarves/thamizhi-pos
 
 ### How to set ThamizhiMorph up
 
@@ -75,8 +75,11 @@ For instance, if you want to analyse a noun - say தமிழ் , you can do t
 echo தமிழ் | flookup tamil-nouns.fst 
 ```
 and this would give you the following output. Where, the 1st token gives the surface form which you passed, the second token has lemma, pos, and analysis, which are separated by ‘+’, respectively 
+```
+தமிழ்	தமிழ்+noun+nom
+```
 
-If you want to do the morphological parsing along with the POS tagger, you can used the python script thamizhi-morph-parse-2.py. Make sure you keep the POS model, Tokenizer model (these two models you can get it from https://github.com/sarves/thamizhi-pos) and Facebook's fastext model under a directory called models, and all the fsts files from https://github.com/sarves/thamizhi-morph/tree/master/FST-Models in a folder called fsts. Further, you also need to ensure that all the FST models have executable permission. Anyway the python script is self explonary. Feel free to reach out me if you have any issues.
+If you want to do the morphological parsing along with the POS tagger, you can used the python script *thamizhi-morph-parse-2.py*. Make sure you keep the POS model, Tokenizer model (these two models you can get it from https://github.com/sarves/thamizhi-pos) and Facebook's fastext model under a directory called models, and all the fsts files from https://github.com/sarves/thamizhi-morph/tree/master/FST-Models in a folder called fsts. Further, you also need to ensure that all the FST models have executable permission. Anyway the python script is self explonary. Feel free to reach out me if you have any issues.
 
 ### Challenges and future work
 

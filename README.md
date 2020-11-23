@@ -14,7 +14,7 @@ A lexicon of 80K nouns have been compiled from various sources, including books 
 
 In morphological analysis we have handled 220 conjugations, including the conjugations of post-positional particles, for each noun class.
 
-In addition we have also implemented a python script to classify nouns according to our paradigm. This script can befound here: XXXX
+In addition we have also implemented a python script to classify nouns according to our paradigm. This script can befound here: https://github.com/sarves/Tamil-Noun-Classifier
 
 ### Verb morphology
 

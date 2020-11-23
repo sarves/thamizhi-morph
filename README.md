@@ -69,15 +69,14 @@ In order to run the terminal version you need to install the following tools as 
 After setting up these two libraries, you can do the following command to get the analysis in your terminal:
 
 echo <word> | flookup <fst-file>
-
+  
 For instance, if you want to analyse a noun - say தமிழ் , you can do the following:
 
 echo தமிழ் | flookup tamil-nouns.fst 
 
 and this would give you the following output. Where, the 1st token gives the surface form which you passed, the second token has lemma, pos, and analysis, which are separated by ‘+’, respectively 
 
-
-Thereafter, use the python script to do the contextual morphological tagging. Make sure you keep the POS model, Tokenizer model (these two models you can get it from https://github.com/sarves/thamizhi-pos) and Facebook's fastext model under a directory called models, and all the fsts files from https://github.com/sarves/thamizhi-morph/tree/master/FST-Models in a folder called fsts. Further, you also need to ensure that all the FST models have executable permission. Anyway the python script is self explonary. Feel free to reach out me if you have any issues.
+If you want to do the morphological parsing along with the POS tagger, you can used the python script thamizhi-morph-parse-2.py. Make sure you keep the POS model, Tokenizer model (these two models you can get it from https://github.com/sarves/thamizhi-pos) and Facebook's fastext model under a directory called models, and all the fsts files from https://github.com/sarves/thamizhi-morph/tree/master/FST-Models in a folder called fsts. Further, you also need to ensure that all the FST models have executable permission. Anyway the python script is self explonary. Feel free to reach out me if you have any issues.
 
 ### Challenges and future work
 
@@ -103,3 +102,4 @@ National Languages Processing Centre,
 University of Moratuwa.
 iamsarves@gmail.com
 sarvesk@uom.lk
+

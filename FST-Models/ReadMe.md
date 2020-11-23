@@ -18,3 +18,6 @@
 ## FST Models for nouns:
   - nouns.fst: the model for noun morphological analyser
   - noun-guesser.fst: a guesser for noun morphology
+  
+  You can see how these can be used in your applications here: fomafst.github.io
+  These models are compiled according to the foma specifications given in the website.

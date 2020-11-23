@@ -1,4 +1,7 @@
-# ThamizhiMorph: Tamil Morphological Analyser and Generator
+# ThamizhiMorph: Tamil Morphological Analyser
+## Use it here: http://nlp-tools.uom.lk/thamizhi-morph/ 
+Note, I am revamping the site, therefore, there may be outages time to time. Please bear with me. - November, 2020.
+
 
 ThamizhiMorph is an open source Tamil morphological analyser cum generator, which handles primarily the inflectional morphology of Tamil verbs, nouns, and other types. This has been developed using a Finite-State Transducer (fomafst.github.io). 
 A neural based tokeniser, and POS tagger have also been integrated to this tool so that given text can be analysed contectually to provide morphological analyses.
@@ -29,7 +32,7 @@ We have also handled adjectives, adverbs and other paricles. Conjuctions, intens
 
 ### Generations of words
 
-Using ThamizhiMorph, surface forms or actucal words can be generated. This list would be very usefule for applications like spell checkers, machine translators, or any applications where you need data augmentation. Using the current version we can generate more than 15M verbs and 10M nouns, for instance. Some sample list of generated words can be found here: XXXXXX
+Using ThamizhiMorph, surface forms or actucal words can be generated. This list would be very usefule for applications like spell checkers, machine translators, or any applications where you need data augmentation. Using the current version we can generate more than 15M verbs and 10M nouns, for instance. Some sample list of generated words can be found here: https://github.com/sarves/thamizhi-morph/tree/master/Generated-Verbs
 
 ### Why ThamizhiMorph
 - The only morphological analyser which is currently maintained, and developed activily
@@ -39,30 +42,38 @@ Using ThamizhiMorph, surface forms or actucal words can be generated. This list 
 - The only analyser which handles sandhi in its anlyses, sandhi gives important clues for morphological/syntactical processes
 - ThamizhiMorph is a transducer, there generations can also be done. 
 
+### ThamizhiMorph - what are given
+
+All the data used to develop ThamizhiMorph are given, including lexicons, finite-state models, meta-morph rules, scripts for noun classifications and data cleaning.
+- FST models (https://github.com/sarves/thamizhi-morph/tree/master/FST-Models)
+- Lexicons (https://github.com/sarves/thamizhi-morph/tree/master/Lexicons)
+- Generated verbs (https://github.com/sarves/thamizhi-morph/tree/master/Generated-Verbs) 
+> Readme files in the respective directories ellaborate more about the content.
+
 ### How ThamizhiMorph works
+
 There are two ways in which we can use ThamizhiMorph:
 - Web portal: http://nlp-tools.uom.lk/thamizhi-morph/
 Using this portal, given text cn be analysed word by word, without considering any contextual information. Currently, there are no POS integrated to the version avilable here.
 
-- Terminal version / standalone version: This is a python version of the tagger, available for the download in this repo. This is a python programme which integrates a tokeniser, POS tagger and ThamizhiMorph. This analyse the data given in a text file called sentences.txt in the given folder, and provide two documents. One of which consists the contextual analyses by considering POS tagger informtion and morphological information. The other file captures the analyses where POS and ThamizhiMorph deviate. Since POS tagger is also does not have the 100% accuracy, we did not through anything data analysed by ThamizhiMorph.
-
+- Terminal version / standalone version: This is a python version of the tagger, available for the download in this repo. This is a python programme which integrates a tokeniser, ThamizhiPOSt (a POS tagger) and ThamizhiMorph. This analyse the data given in a text file called sentences.txt in the given folder, and provide two documents. One of which consists the contextual analyses by considering POS tagger informtion and morphological information. The other file captures the analyses where POS and ThamizhiMorph deviate. Since POS tagger is also does not have the 100% accuracy, we did not through anything data analysed by ThamizhiMorph. You can read more about the ThamizhiPOSt here: XXXXXXXX
 
 
 ### How to set ThamizhiMorph up
 
 You can use the website version without needing of any special requirements. All the data to this tool has to be fed in Unicode format. The other version 
 
-# Challenges
+### Challenges and future work
+
 Tamil is morphologically rich, and has evolved over several thousand years. This makes the task a challeging in terms of coverage and understanding. Further, even with a POS tagger which captures the context, disambiguation was not possible, and there are syntactical clues are required at sometimes. As an analyser, this tool provide all the analyses when it cannot be disambigurated. 
+We are in the process of develop a neural based morphological analyser based on the data we generated from ThamizhiMorph. Further, we are also exploring ways in which we can do more disambiguations, may be using syncatical clues if we can get them. 
 
-Noun
+### Cite please
 
+- Sarveswaran, K., Dias, G. and Butt, M.,"ThamizhiMorph: A Morphological Parser for the Tamil Language", Special Issue on Machine Translation for Low-Resource Languages, Machine Translation, 2020 [accepted] - This gives very detail description of how we developed ThamizhiMorph, what were our design decisions etc.
+- Sarveswaran, K., Dias, G. and Butt, M.: “Using Meta-Morph Rules to develop Morphological Analysers: A case study concerning Tamil”, 14th International Conference on Finite-State Methods and Natural Language Processing,Dresden, Germany, September 23–25, 2019.
+- Sarveswaran, K., Dias, G. and Butt, M.: “ThamizhiFST: A Morphological Analyser and Generator for Tamil Verbs,” 3rd International Conference on Information Technology Research (ICITR), pp. 1-6, Moratuwa, Sri Lanka, 2018.
 
-- FST models (https://github.com/sarves/thamizhi-morph/tree/master/FST-Models)
-- Lexicons (https://github.com/sarves/thamizhi-morph/tree/master/Lexicons)
-- Generated verbs (https://github.com/sarves/thamizhi-morph/tree/master/Generated-Verbs) 
-> Readme files in the respective directories ellaborate more about content.
+### Acknowledgement
 
-An online version of the tool can be find here: http://nlp-tools.uom.lk/thamizhi-morph/parse-sentence.php
->I am revamping this tool, therefore, there may be outages time to time. 
-Please use the Github version for further development. 
+This research was supported by the Accelerating Higher Education Expansion and Development (AHEAD) Operation of the Ministry of Higher Education, Sri Lanka funded by the World Bank, and also supported by the DAAD (German Academic Exchange Office)

@@ -94,15 +94,14 @@ We are in the process of developing a neural based morphological analyser based 
 
 ### Acknowledgment
 
-This research was supported by the Accelerating Higher Education Expansion and Development (AHEAD) Operation of the Ministry of Higher Education, Sri Lanka funded by the World Bank, and also supported by the DAAD (German Academic Exchange Office)
+The initial part (2018 - 2021) of the research was supported by the Accelerating Higher Education Expansion and Development (AHEAD) Operation of the Ministry of Higher Education, Sri Lanka funded by the World Bank, and also supported by the DAAD (German Academic Exchange Office).
 
 
 ### Developer / point of contact
 
 K. Sarveswaran, 
-Department of Computer Science and Engineering |
-National Languages Processing Centre,
-University of Moratuwa.
-iamsarves@gmail.com
-sarvesk@uom.lk
+Department of Computer Science, University of Jaffna. Sri Lanka.
 
+The development of this tool was started when I was a research assistant at the National Languages Processing Centre, University of Moratuwa.
+
+Reach me out via iamsarves@gmail.com
